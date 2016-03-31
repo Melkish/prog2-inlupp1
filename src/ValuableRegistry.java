@@ -14,7 +14,7 @@ public class ValuableRegistry extends JFrame {
     private JRadioButton sortByNameButton;
     private JRadioButton sortByValueButton;
 
-
+    //TODO a bunch of shit
     public ValuableRegistry() {
 
         Color myGreen = new Color(179, 245, 223);
