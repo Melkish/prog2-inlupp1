@@ -4,19 +4,19 @@
 public class Jewelry extends Valuable {
 
     private int amountOfGems;
-    private boolean isSilver;
+    private boolean isMadeByGold;
 
 
-    public Jewelry (String name, int amountOfGems, boolean isSilver) {
+    public Jewelry (String name, int amountOfGems, boolean isMadeByGold) {
         super (name);
         this.amountOfGems = amountOfGems;
-        this.isSilver = isSilver;
+        this.isMadeByGold = isMadeByGold;
     }
 
     @Override
     public int value() {
         int value;
-        if (isSilver != true) {
+        if (isMadeByGold == true) {
             value = 2000;
         } else {
             value = 700;
@@ -30,7 +30,7 @@ public class Jewelry extends Valuable {
         return this.amountOfGems;
     }
 
-    public boolean getIsSilver() {
-        return this.isSilver;
+    public boolean getIsMadeByGold() {
+        return this.isMadeByGold;
     }
 }
