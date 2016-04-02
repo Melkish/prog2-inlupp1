@@ -18,11 +18,7 @@ public class Appliances extends Valuable {
         return value;
     }
 
-    public int getBuyPrice () {
-        return this.buyPrice;
-    }
-
-    public int getWear () {
-        return this.wear;
+    public String toString() {
+        return "Appliance: " + super.getName() + " value: " + super.getValue() + " price: " + buyPrice + " wear: " + wear;
     }
 }

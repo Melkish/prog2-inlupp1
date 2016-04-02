@@ -5,12 +5,17 @@ public class Jewelry extends Valuable {
 
     private int amountOfGems;
     private boolean isMadeByGold;
-
+    private String material;
 
     public Jewelry (String name, int amountOfGems, boolean isMadeByGold) {
         super (name);
         this.amountOfGems = amountOfGems;
         this.isMadeByGold = isMadeByGold;
+        if (isMadeByGold == true) {
+            material = "gold";
+        } else {
+            material = "silver";
+        }
     }
 
     @Override
@@ -26,11 +31,8 @@ public class Jewelry extends Valuable {
         return value;
     }
 
-    public int getAmountOfGems() {
-        return this.amountOfGems;
-    }
+    public String toString() {
+        return "Jewelry: " + super.getName() + " value: " + super.getValue() + " gems: " + amountOfGems + " " + material;
 
-    public boolean getIsMadeByGold() {
-        return this.isMadeByGold;
     }
 }

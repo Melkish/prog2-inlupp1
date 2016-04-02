@@ -17,12 +17,8 @@ public class Stock extends Valuable {
         return value;
     }
 
-    public int getAmount(){
-        return this.amount;
-    }
-
-    public int getCourse() {
-        return this.course;
+    public String toString() {
+        return "Stock: " + super.getName() + " value: " + super.getValue() + " amount: " + amount + " course: " + course;
     }
 
     public void setCourse(int newCourse) {

@@ -16,9 +16,14 @@ public abstract class Valuable {
     }
 
     public int getValue() {
-        float valueAsDecimal = (float)value*1.25f;
+        float valueAsDecimal = (float)value * 1.25f;
         int value = Math.round(valueAsDecimal);
         return value;
     }
+
+    public String toString() {
+        return getName() + getValue();
+    }
+
 
 }

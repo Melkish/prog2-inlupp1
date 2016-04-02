@@ -82,6 +82,7 @@ public class ValuableRegistry extends JFrame {
         ButtonGroup bg = new ButtonGroup();
         bg.add(sortByValueButton);
         bg.add(sortByNameButton);
+        //TODO set default radio button
         right.setBackground(myRed);
 
         display = new JTextArea();
@@ -105,11 +106,11 @@ public class ValuableRegistry extends JFrame {
             if (sortByNameButton.isSelected()) {
                 //TODO sort ArrayList by name
                 for (Valuable v : valuables)
-                    display.append(v.toString());
+                    display.append(v.toString() + "\n");
             } else if (sortByValueButton.isSelected()) {
                 //TODO sort ArrayList by value
                 for (Valuable v : valuables)
-                    display.append(v.toString());
+                    display.append(v.toString() + "\n");
             } // TODO else display error message or choose one of the two buttons as default
 
         }
@@ -183,8 +184,8 @@ public class ValuableRegistry extends JFrame {
                     int price = a.getPrice();
                     int wear = a.getWear();
 
-                    Stock stock = new Stock(name, price, wear);
-                    valuables.add(stock);
+                    Appliances appliances = new Appliances(name, price, wear);
+                    valuables.add(appliances);
                 }catch(NumberFormatException e){
                     JOptionPane.showMessageDialog(ValuableRegistry.this,"Wrong input! Please try again");
                 }
@@ -197,7 +198,7 @@ public class ValuableRegistry extends JFrame {
     public class StockCrashLis implements ActionListener {
         public void actionPerformed(ActionEvent ave) {
             for (Valuable v : valuables) {
-                if (v.getClass().equals("Stock")){
+                if (v instanceof Stock){
                    Stock s = (Stock) v;
                     s.setCourse(0);
                 }
