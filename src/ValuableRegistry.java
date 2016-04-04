@@ -71,7 +71,7 @@ public class ValuableRegistry extends JFrame {
         right.add(sortLabel);
         sortLabel.setForeground(myGray);
 
-        sortByValueButton = new JRadioButton("Value");
+        sortByValueButton = new JRadioButton("Value", true);
         right.add(sortByValueButton);
         sortByValueButton.setForeground(myGray);
 
@@ -82,7 +82,6 @@ public class ValuableRegistry extends JFrame {
         ButtonGroup bg = new ButtonGroup();
         bg.add(sortByValueButton);
         bg.add(sortByNameButton);
-        //TODO set default radio button
         right.setBackground(myRed);
 
         display = new JTextArea();
@@ -113,8 +112,7 @@ public class ValuableRegistry extends JFrame {
 
                 for (Valuable v : valuables)
                     display.append(v.toString() + "\n");
-            } // TODO else display error message or choose one of the two buttons as default
-
+            }
         }
     }
 
@@ -129,10 +127,8 @@ public class ValuableRegistry extends JFrame {
     class ValueCmp implements Comparator<Valuable> {
         public int compare(Valuable v1, Valuable v2) {
             return v1.getValue() - v2.getValue();
-
         }
     }
-
 
     public class NewLis implements ActionListener {
 
@@ -161,7 +157,6 @@ public class ValuableRegistry extends JFrame {
                     JOptionPane.showMessageDialog(ValuableRegistry.this,"Wrong input! Please try again");
                 }
 
-
             } else if (chosenValuable.equalsIgnoreCase("Stock")) {
                 try {
                     StockForm s = new StockForm();
@@ -184,7 +179,6 @@ public class ValuableRegistry extends JFrame {
                     JOptionPane.showMessageDialog(ValuableRegistry.this,"Wrong input! Please try again");
                 }
 
-
             } else if (chosenValuable.equalsIgnoreCase("Appliance")) {
                 try {
                     ApplianceForm a = new ApplianceForm();
@@ -206,8 +200,6 @@ public class ValuableRegistry extends JFrame {
                 }catch(NumberFormatException e){
                     JOptionPane.showMessageDialog(ValuableRegistry.this,"Wrong input! Please try again");
                 }
-
-
             }
         }
     }
