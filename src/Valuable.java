@@ -3,7 +3,7 @@
  */
 public abstract class Valuable {
     private String name;
-    private int value;
+
 
     public Valuable (String name) {
         this.name = name;
@@ -16,14 +16,8 @@ public abstract class Valuable {
     }
 
     public int getValue() {
-        float valueAsDecimal = (float)value * 1.25f;
+        float valueAsDecimal = (float)value() * 1.25f;
         int value = Math.round(valueAsDecimal);
         return value;
     }
-
-    public String toString() {
-        return getName() + getValue();
-    }
-
-
 }

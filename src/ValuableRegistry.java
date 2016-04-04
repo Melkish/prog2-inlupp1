@@ -104,14 +104,31 @@ public class ValuableRegistry extends JFrame {
         public void actionPerformed(ActionEvent ave) {
             display.setText("");
             if (sortByNameButton.isSelected()) {
-                //TODO sort ArrayList by name
+                Collections.sort(valuables, new NameCmp());
+
                 for (Valuable v : valuables)
                     display.append(v.toString() + "\n");
             } else if (sortByValueButton.isSelected()) {
-                //TODO sort ArrayList by value
+                Collections.sort(valuables, new ValueCmp());
+
                 for (Valuable v : valuables)
                     display.append(v.toString() + "\n");
             } // TODO else display error message or choose one of the two buttons as default
+
+        }
+    }
+
+    class NameCmp implements Comparator <Valuable> {
+        public int compare(Valuable v1, Valuable v2) {
+            String n1 = v1.getName();
+            String n2 = v2.getName();
+            return n1.compareTo(n2);
+        }
+    }
+
+    class ValueCmp implements Comparator<Valuable> {
+        public int compare(Valuable v1, Valuable v2) {
+            return v1.getValue() - v2.getValue();
 
         }
     }
