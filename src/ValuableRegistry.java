@@ -14,15 +14,14 @@ public class ValuableRegistry extends JFrame {
     private JTextArea display;
     private JRadioButton sortByNameButton;
     private JRadioButton sortByValueButton;
+    Color myRed = new Color(143, 23, 21);
+    Color myGray = new Color(211, 218, 218);
 
     public static void main(String[] args) {
         new ValuableRegistry();
     }
 
     public ValuableRegistry() {
-
-        Color myRed = new Color(143, 23, 21);
-        Color myGray = new Color(211, 218, 218);
 
         JPanel lower = new JPanel();
         add(lower, BorderLayout.SOUTH);
@@ -47,9 +46,9 @@ public class ValuableRegistry extends JFrame {
         stockCrashButton.setForeground(Color.DARK_GRAY);
         lower.setBackground(myRed);
 
-        chooseValuableToCreate.addActionListener(new NewLis());
-        showButton.addActionListener(new ShowLis());
-        stockCrashButton.addActionListener(new StockCrashLis());
+        chooseValuableToCreate.addActionListener(new NewListener());
+        showButton.addActionListener(new ShowListener());
+        stockCrashButton.addActionListener(new StockCrashListener());
 
 
         JPanel upper = new JPanel();
@@ -98,7 +97,7 @@ public class ValuableRegistry extends JFrame {
     }
 
 
-    public class ShowLis implements ActionListener {
+    public class ShowListener implements ActionListener {
 
         public void actionPerformed(ActionEvent ave) {
             display.setText("");
@@ -130,7 +129,7 @@ public class ValuableRegistry extends JFrame {
         }
     }
 
-    public class NewLis implements ActionListener {
+    public class NewListener implements ActionListener {
 
         public void actionPerformed(ActionEvent ave) {
             String chosenValuable = (String) chooseValuableToCreate.getSelectedItem();
@@ -204,7 +203,7 @@ public class ValuableRegistry extends JFrame {
         }
     }
 
-    public class StockCrashLis implements ActionListener {
+    public class StockCrashListener implements ActionListener {
         public void actionPerformed(ActionEvent ave) {
             for (Valuable v : valuables) {
                 if (v instanceof Stock){
