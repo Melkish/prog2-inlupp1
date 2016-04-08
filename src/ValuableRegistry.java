@@ -6,6 +6,7 @@ import java.awt.*;
 /**
  * Created by Melke on 26/03/16.
  */
+
 public class ValuableRegistry extends JFrame {
 
     private ArrayList<Valuable> valuables = new ArrayList<>();
@@ -96,19 +97,17 @@ public class ValuableRegistry extends JFrame {
         setVisible(true);
     }
 
-
     public class ShowListener implements ActionListener {
 
         public void actionPerformed(ActionEvent ave) {
             display.setText("");
             if (sortByNameButton.isSelected()) {
                 Collections.sort(valuables, new NameCmp());
-
                 for (Valuable v : valuables)
                     display.append(v.toString() + "\n");
             } else if (sortByValueButton.isSelected()) {
                 Collections.sort(valuables, new ValueCmp());
-
+                Collections.reverse(valuables);
                 for (Valuable v : valuables)
                     display.append(v.toString() + "\n");
             }
@@ -130,7 +129,6 @@ public class ValuableRegistry extends JFrame {
     }
 
     public class NewListener implements ActionListener {
-
         public void actionPerformed(ActionEvent ave) {
             String chosenValuable = (String) chooseValuableToCreate.getSelectedItem();
 

@@ -1,6 +1,7 @@
 /**
  * Created by Melke on 26/03/16.
  */
+
 public class Appliances extends Valuable {
     private int buyPrice;
     private int wear;

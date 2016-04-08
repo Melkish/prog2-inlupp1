@@ -1,6 +1,7 @@
 /**
  * Created by Melke on 26/03/16.
  */
+
 public class Stock extends Valuable {
     private int amount;
     private int course;

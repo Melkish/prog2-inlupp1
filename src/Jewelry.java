@@ -1,6 +1,7 @@
 /**
  * Created by Melke on 26/03/16.
  */
+
 public class Jewelry extends Valuable {
 
     private int amountOfGems;
@@ -33,6 +34,5 @@ public class Jewelry extends Valuable {
 
     public String toString() {
         return "Jewelry: " + super.getName() + " value: " + super.getValue() + " gems: " + amountOfGems + " " + material;
-
     }
 }

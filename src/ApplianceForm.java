@@ -3,6 +3,7 @@ import javax.swing.*;
 /**
  * Created by Melke on 02/04/16.
  */
+
 public class ApplianceForm extends JPanel {
 
     private JTextField nameField = new JTextField(10);

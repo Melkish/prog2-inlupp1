@@ -3,8 +3,8 @@ import javax.swing.*;
 /**
  * Created by Melke on 02/04/16.
  */
-public class StockForm extends JPanel{
 
+public class StockForm extends JPanel{
     private JTextField nameField = new JTextField(10);
     private JTextField amountField = new JTextField(5);
     private JTextField courseField = new JTextField(5);
@@ -33,7 +33,6 @@ public class StockForm extends JPanel{
     public int getAmount(){
         return Integer.parseInt(amountField.getText());
     }
-
     public int getCourse(){
         return Integer.parseInt(courseField.getText());
     }
